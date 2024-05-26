@@ -8,7 +8,7 @@ frames_between_savedImages: Number of frames to skip before saving the next fram
 """
 
 # Command line arguments
-if len(sys.argv) != 3:
+if len(sys.argv) != 4:
     print("Usage: python main.py <video_file> <output_folder> <frames_between_savedImages>")
     sys.exit(1)
 
@@ -32,7 +32,7 @@ while True:
 
     # If the frame count is a multiple of frames_between_savedImages, save the frame
     if(frame_count%frames_between_savedImages == 0):
-        frame_filename = os.path.join(outputFolder, f'frame_{frame_count:04d}.png')
+        frame_filename = os.path.join(output_folder, f'frame_{frame_count:04d}.png')
         cv2.imwrite(frame_filename, frame)
 
     # Increment the frame count
